@@ -1,0 +1,36 @@
+{:logger {:level :info
+          :appender :println}
+ :apps {:frontend
+        {:host "localhost"
+         :port 8080
+         :uri "/"
+         :resources
+         {:http
+          {:anon {"/auth/*" {:methods ["get" "post"]}
+                  "/home" {:methods ["get"]}}
+           :store {"/store/*" {:methods ["get"]}}
+           :marketplace {"/marketplace/*" {:methods ["get"]}}}}}
+        :backend
+        {:host "localhost"
+         :port 9000
+         :uri "/api"
+         :resources
+         {:grpc {:anon ["HealthCheck" "SignUp" "SignIn"]}
+          :http {:store {"/store/_/products" {:methods ["get" "post"]}}}}}}
+ :db {:provider "postgres"
+      :connection {:schema "postgres"
+                   :username "emr-user"
+                   :password "emr-pass"
+                   :host "0.0.0.0"
+                   :port 5432
+                   :db-name "emerauth"
+                   :params {}}}
+ :auth {:providers {:otp {}}
+        :jwt {:alg :hs256
+              :ttl 3600}}
+ :roles {:customer {:http [:frontend/store]}
+         :seller {:http [:frontend/store :backend/store]}}
+ :server {:type :rest
+          :host "0.0.0.0"
+          :port 4078
+          :proxy-requests? false}}
