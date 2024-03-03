@@ -9,5 +9,7 @@
            :test {:extra-deps {lambdaisland/kaocha {:mvn/version "1.87.1366"}}
                   :extra-paths ["test"]
                   :main-opts ["-m" "kaocha.runner"]}
+           :lint {:extra-deps {clj-kondo/clj-kondo {:mvn/version "2024.02.12"}}
+                  :main-opts ["-m" "clj-kondo.main" "--lint" "src"]}
            :nrepl {:extra-deps {cider/cider-nrepl {:mvn/version "0.45.0"}}
                    :main-opts ["-m" "nrepl.cmdline" "--middleware" "[cider.nrepl/cider-middleware]"]}}}
