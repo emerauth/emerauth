@@ -20,9 +20,16 @@ jobs:
           java-version: '21'
 
       - name: Install Clojure CLI
-        uses: DeLaGuardo/setup-clojure@master
+        uses: DeLaGuardo/setup-clojure@12.5
         with:
           cli: 1.11.1
+
+      - name: Cache Maven packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-m2-${{ hashFiles('**/deps.edn') }}
+          restore-keys: ${{ runner.os }}-m2
 
       - name: Run test ${{ matrix.test-to-run }}
         run: clojure -M:test ${{ matrix.test-to-run }}
