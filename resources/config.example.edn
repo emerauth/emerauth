@@ -1,4 +1,5 @@
-{:logger {:level :info}
+{:logger {:level :info
+          :appender :println}
  :apps {:frontend
         {:host "localhost"
          :port 8080
