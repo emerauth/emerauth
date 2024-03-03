@@ -1,0 +1,14 @@
+name: linter
+
+on: [pull_request]
+
+jobs:
+  linter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: DeLaGuardo/setup-clj-kondo@master
+        with:
+          version: '2022.05.31'
+      - uses: actions/checkout@v4
+      - name: clj-kondo
+        run: clj-kondo --lint src test
