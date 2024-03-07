@@ -17,14 +17,12 @@
          :resources
          {:grpc {:anon ["HealthCheck" "SignUp" "SignIn"]}
           :http {:store {"/store/_/products" {:methods ["get" "post"]}}}}}}
- :db {:provider "postgres"
-      :connection {:schema "postgres"
-                   :username "emr-user"
-                   :password "emr-pass"
-                   :host "0.0.0.0"
+ :db {:provider :postgres
+      :connection {:host "localhost"
                    :port 5432
-                   :db-name "emerauth"
-                   :params {}}}
+                   :dbname "emerauth"
+                   :user "emer-user"
+                   :password "emer-pass"}}
  :auth {:providers {:otp {}}
         :jwt {:alg :hs256
               :ttl 3600}}
