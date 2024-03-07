@@ -2,12 +2,14 @@
   (:require
    [com.emerauth.components.config :as config]
    [com.emerauth.components.logger :as logger]
+   [com.emerauth.components.db :as db]
    [com.stuartsierra.component :as component]))
 
 (def system-map
   (component/system-map
-   :config (config/new-config "config.dev.edn")
-   :logger (component/using (logger/new-logger) [:config])))
+   :config (config/new-config "config.example.edn")
+   :logger (component/using (logger/new-logger) [:config])
+   :db (component/using (db/new-db) [:config])))
 
 (comment
   (def system (atom nil))
