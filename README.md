@@ -10,10 +10,10 @@ A hands-free configurable service that you can plug into any web application and
 
 ## Documentation
 
-- [Objectives](./docs/objectives.md)
-- [Configuration](./docs/configuration.md)
-- [Building and Running](./docs/building-and-running.md)
+- [Objectives](./docs/1-objectives.md)
+- [Configuration](./docs/2-configuration.md)
+- [Building and Running](./docs/3-building-and-running.md)
 
 ## Contributing
 
-Contributions are welcome! Please read our [Contribution Guidelines](./CONTRIBUTING.md) and the [Documentation](#documentation)
+Contributions are welcome! Please read our [Contribution Guidelines](./CONTRIBUTING.md) and the [Documentation](#documentation).
