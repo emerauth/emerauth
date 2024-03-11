@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: "Feature Request and/or Questions"
+    url: https://github.com/emerauth/emerauth/discussions
+    about: As stated in our Contribution Guidelines, please open a discussion.
