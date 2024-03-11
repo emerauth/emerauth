@@ -43,7 +43,7 @@ can be grouped and contextualized as:
                "/marketplace/:product" {:methods ["get" "post" "put" "delete"]}}}
 ```
 
-The `:public` and `:protected` resource groups are registered keywords for Emerauth. They are, respectively, resources that anyone can access, and resources that only signedin users can access.
+The `:public` and `:protected` resource groups are registered keywords for Emerauth. They are, respectively, resources that anyone can access, and resources that only signed in users can access.
 
 ## App
 
