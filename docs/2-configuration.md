@@ -47,7 +47,7 @@ The `:public` and `:protected` resource groups are registered keywords for Emera
 
 ## App
 
-An app is anything that can request Emerauth to authorize an user towards a resource. They are defined simply for identification, and should be mirrored when requested from withing the applications/services themselves.
+An app is anything that can request Emerauth to authorize an user towards a resource. They are defined simply for identification, and should be mirrored when requested from within the applications/services themselves.
 
 > [!NOTE]
 > With requesting from within, we mean that the frontend service, when requesting Emerauth to authorize a resource, should state who they are.
