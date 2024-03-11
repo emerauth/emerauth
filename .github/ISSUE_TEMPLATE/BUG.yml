@@ -1,0 +1,54 @@
+name: Bug Report
+description: Something is not working as expected
+title: Please summarize what is the problem
+assignees: ["J0sueTM", "lanjoni"]
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to fill out this bug report!
+  - type: input
+    id: version-or-tag
+    attributes:
+      label: Version or Tag
+      description: What version, tag, branch, release, or other identifier of this repo were you using when the bug happened?
+      placeholder: ex. version 1.2.3, branch feat/foobar, etc
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Please explain in detail what is not working as expected; every important context in place when the bug happened.
+      placeholder: I was fooing and then the bar foobarred!!!
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and Environment
+      description: |
+        If necessary, please copy and paste any relevant log output and/or environment variables.
+        This will be automatically formatted, so no need to put backsticks.
+        Also, make sure to clean up any sensitive data before sending this report!
+      render: shell
+    validations:
+      required: false
+  - type: textarea
+    id: configuration
+    attributes:
+      label: Configuration EDN
+      description: |
+        If necessary, please copy and paste your config.edn file.
+        Also, make sure to clean up any sensitive data before sending this report!
+      render: clj
+    validations:
+      required: false
+  - type: checkboxes
+    id: contribution-guidelines
+    attributes:
+      label: Contribution Guidelines
+      description: By submitting this issue, you affirm that you have read our [Contribution Guidelines](https://github.com/emerauth/emerauth/blob/main/CONTRIBUTING.md)
+    options:
+      - label: "I affirm that I did read Emerauth's Contribution Guidelines"
+        required: true
