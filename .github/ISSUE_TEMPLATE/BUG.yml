@@ -49,6 +49,6 @@ body:
     attributes:
       label: Contribution Guidelines
       description: By submitting this issue, you affirm that you have read our [Contribution Guidelines](https://github.com/emerauth/emerauth/blob/main/CONTRIBUTING.md)
-    options:
-      - label: "I affirm that I did read Emerauth's Contribution Guidelines"
-        required: true
+      options:
+        - label: "I affirm that I did read Emerauth's Contribution Guidelines"
+          required: true
