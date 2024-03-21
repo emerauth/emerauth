@@ -3,6 +3,7 @@ description: Something is not working as expected
 title: Please summarize what is the problem
 assignees: ["J0sueTM", "lanjoni"]
 labels: ["bug", "triage"]
+projects: "emerauth/3"
 body:
   - type: markdown
     attributes:
