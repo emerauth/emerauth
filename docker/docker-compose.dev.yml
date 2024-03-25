@@ -1,0 +1,10 @@
+services:
+  pg:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_USER: emer-user
+      POSTGRES_PASSWORD: emer-pass
+      POSTGRES_DATABASE: emerauth
+    ports:
+      - 5432:5432
