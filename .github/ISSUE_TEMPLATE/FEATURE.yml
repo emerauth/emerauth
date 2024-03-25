@@ -1,5 +1,5 @@
-name: Feature Request
-description: Something should be added
+name: Feature
+description: "Something should be added, have been discussed and approved"
 title: Please summarize the needed feature
 assignees: ["J0sueTM", "lanjoni"]
 labels: ["enhancement"]
