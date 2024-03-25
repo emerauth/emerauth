@@ -1,0 +1,39 @@
+name: Feature Request
+description: Something should be added
+title: Please summarize the needed feature
+assignees: ["J0sueTM", "lanjoni"]
+labels: ["enhancement"]
+projects: "emerauth/3"
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for taking the time to fill out this feature request!
+  - type: input
+    id: discussion-link
+    attributes:
+      label: Discussion Link
+      description: After [discussing](https://github.com/emerauth/emerauth/discussions) with the core devs team about this change, please link it here.
+    validations:
+      required: true
+  - type: textarea
+    id: extra-info
+    attributes:
+      label: Extra Info
+      description: "Please layout any additional info or context needed, that haven't been discussed before."
+  - type: checkboxes
+    id: contribution-guidelines
+    attributes:
+      label: Contribution Guidelines
+      description: By submitting this feature request, you affirm that you have read our [Contribution Guidelines](https://github.com/emerauth/emerauth/blob/main/CONTRIBUTING.md)
+      options:
+        - label: "I affirm that I did read Emerauth's Contribution Guidelines"
+          required: true
+  - type: checkboxes
+    id: development
+    attributes:
+      label: Development
+      options:
+        - label: "I may be able to develop this feature"
+          required: false
+        - label: "This feature has user visible breaking changes"
+          required: false
