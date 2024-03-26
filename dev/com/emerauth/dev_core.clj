@@ -2,8 +2,8 @@
   (:require
    [clojure.java.io :as io]
    [com.emerauth.components.config :as config]
-   [com.emerauth.components.logger :as logger]
    [com.emerauth.components.db :as db]
+   [com.emerauth.components.logger :as logger]
    [com.stuartsierra.component :as component]))
 
 (def system-map

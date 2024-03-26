@@ -1,5 +1,9 @@
 (ns com.emerauth.schemas.config
-  "Spec for Emerauth's configuration file.") :warn :error]]
+  "Spec for Emerauth's configuration file.")
+
+(def Logger
+  [:map
+   [:level [:enum :info :warn :error]]
    [:appender [:enum :println]]])
 
 (def Resource
