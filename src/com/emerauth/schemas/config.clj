@@ -1,13 +1,5 @@
 (ns com.emerauth.schemas.config
-  "Spec for Emerauth's configuration file."
-  (:require
-   [clojure.edn :as edn]
-   [clojure.java.io :as io]
-   [malli.core :as m]))
-
-(def Logger
-  [:map
-   [:level [:enum :info :warn :error]]
+  "Spec for Emerauth's configuration file.") :warn :error]]
    [:appender [:enum :println]]])
 
 (def Resource
@@ -52,13 +44,3 @@
    [:auth Auth]
    [:roles Roles]
    [:server Server]])
-
-(comment
-  (def example-config
-    (-> (io/resource "config.example.edn")
-        slurp
-        edn/read-string))
-
-  (m/validate Config example-config)
-  ;;
-  )
