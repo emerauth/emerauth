@@ -1,6 +1,8 @@
 (ns com.emerauth.schemas.config
   "Spec for Emerauth's configuration file."
   (:require
+   [clojure.edn :as edn]
+   [clojure.java.io :as io]
    [malli.core :as m]))
 
 (def Logger
@@ -53,48 +55,9 @@
 
 (comment
   (def example-config
-    {:logger {:level :info
-              :appender :println}
-     :apps {:frontend {:host "localhost"
-                       :port 8080
-                       :uri "/"
-                       :resources
-                       {:public
-                        {"/auth" {:methods ["post"]}
-                         "/home" {:methods ["get"]}}
-                        :protected
-                        {"/auth" {:methods ["put"]}
-                         "/store" {:methods ["get"]}}
-                        :marketplace
-                        {"/marketplace" {:methods ["get"]}
-                         "/marketplace/:product"
-                         {:methods ["get" "post" "put" "delete"]}}}}
-            :backend {:host "localhost"
-                      :port 9000
-                      :uri "/api"
-                      :resources
-                      {:public {"HealthCheck" {}
-                                "SignUp" {}
-                                "SignIn" {}}
-                       :protected {"RefreshToken" {}}
-                       :store {"GetProducts" {}}
-                       :marketplace {"UpdateProduct" {}
-                                     "DeleteProduct" {}}}}}
-     :db {:provider :postgres
-          :connection {:host "localhost"
-                       :port 5432
-                       :dbname "emerauth"
-                       :user "emer-user"
-                       :password "emer-pass"}}
-     :auth {:providers {:otp {}}
-            :jwt {:alg :hs256
-                  :ttl 3600}}
-     :roles {:customer [:frontend/store]
-             :seller [:frontend/store :backend/store]}
-     :server {:type :rest
-              :host "0.0.0.0"
-              :port 4078
-              :proxy-requests? false}})
+    (-> (io/resource "config.example.edn")
+        slurp
+        edn/read-string))
 
   (m/validate Config example-config)
   ;;
