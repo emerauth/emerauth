@@ -4,7 +4,8 @@
         com.stuartsierra/component {:mvn/version "1.1.0"}
         com.xtdb/xtdb-core {:mvn/version "1.24.0"}
         com.xtdb/xtdb-jdbc {:mvn/version "1.24.0"}
-        aero/aero {:mvn/version "1.1.6"}}
+        aero/aero {:mvn/version "1.1.6"}
+        metosin/malli {:mvn/version "0.15.0"}}
  :aliases {:dev {:extra-paths ["dev"]}
            :pg {:extra-deps {org.postgresql/postgresql {:mvn/version "42.7.1"}}}
            :run {:main-opts ["-m" "com.emerauth.core"]
