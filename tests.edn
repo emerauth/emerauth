@@ -1,7 +1,7 @@
 #kaocha/v1
  {:tests [{:id :unit
-           :test-paths ["test/unit"]}
+           :test-paths ["test/com/emerauth/unit"]}
           {:id :integration
-           :test-paths ["test/integration"]}]
+           :test-paths ["test/com/emerauth/integration"]}]
   :color? true
   :reporter [kaocha.report/dots]}
